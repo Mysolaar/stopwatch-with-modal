@@ -1,166 +1,238 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-    --first-color: #FA1406;
-    --second-color: #D2C7BE;
+  --first-color: rgb(250, 20, 6);
+  --second-color: rgb(190, 210, 197);
+  --hover-color: rgb(209, 33, 24);
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  background-color: #333;
 }
 
 .wrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 50px;
-    width: 800px;
-    background: radial-gradient(circle, rgba(43,44,46,1) 0%, rgba(25,25,25,1) 93%);
-    border-radius: 8px;
-    box-shadow: 5px 5px 10px black;
-    color: #fff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+  width: 800px;
+  background: radial-gradient(circle, rgb(43, 44, 46) 0%, rgb(25, 25, 25) 93%);
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px black;
+  color: #fff;
+  overflow: hidden;
 }
 
-.info {
-    position: absolute;
-    top: 6px;
-    right: 14px;
-    padding: 20px;
-    font-size: 24px;
-    color: var(--second-color);
-    cursor: pointer;
-    transition: color .3s;
+.info i {
+  font-size: 24px;
+  position: absolute;
+  top: 6px;
+  padding: 20px;
+  color: var(--second-color);
+  cursor: pointer;
+  transition: color 0.3s;
 }
 
-.info:hover {
-    color: var(--first-color);
+.info .fa-question {
+  right: 14px;
+}
+
+.info .fa-paint-brush {
+  right: 60px;
+}
+
+.info i:hover {
+  color: var(--first-color);
 }
 
 h1 {
-    margin-bottom: 20px;
-    font-size: 60px;
-    font-weight: lighter;
+  margin-bottom: 20px;
+  font-size: 60px;
+  font-weight: lighter;
 }
 
 .stopwatch {
-    font-size: 72px;
-    color: var(--first-color);
+  font-size: 72px;
+  color: var(--first-color);
 }
 
 .time {
-    visibility: hidden;
-    color: var(--second-color);
-    font-size: 22px;
+  visibility: hidden;
+  color: var(--second-color);
+  font-size: 22px;
 }
 
 .buttons {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 30px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 30px;
 }
 
 button {
-    margin: 10px;
-    padding: 10px 20px;
-    width: 20%;
-    color: #fff;
-    font-size: 22px;
-    background-color: transparent;
-    border: 1px solid var(--first-color);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color .3s;
+  margin: 10px;
+  padding: 10px 20px;
+  width: 20%;
+  color: #fff;
+  font-size: 22px;
+  background-color: transparent;
+  border: 1px solid var(--first-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .history {
-    flex-grow: 1;
-    text-transform: uppercase;
+  flex-grow: 1;
+  text-transform: uppercase;
 }
 
-button:hover, button:focus {
-    background-color: var(--first-color);
-    outline: none;
+button:hover,
+button:focus {
+  background-color: var(--first-color);
+  outline: none;
 }
 
 .time-list li {
-    display: flex;
-    justify-content: space-between;
-    width: 300px;
-    font-size: 22px;
-    color: var(--second-color);
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  font-size: 22px;
+  color: var(--second-color);
 }
 
 .time-list span {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .modal-shadow {
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .65);
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
 }
 
 .modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 360px;
-    padding: 30px 60px;
-    border-radius: 15px;
-    background-color: rgb(245, 245, 245);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 360px;
+  padding: 30px 60px;
+  border-radius: 15px;
+  background-color: rgb(228, 228, 228);
+  color: #000000;
 }
 
 .modal h3 {
-    font-size: 30px;
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+  font-size: 30px;
 }
 
 .modal p {
-    margin-bottom: 10px;
-    margin-left: 20px;
-    font-size: 20px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.modal i,
+.modal strong {
+  color: var(--first-color);
 }
 
 .modal .close {
-    display: block;
-    margin: 40px auto 0;
-    width: 200px;
-    background-color: var(--first-color);
-    transition: background-color .3s;
+  display: block;
+  margin: 40px auto 0;
+  width: 200px;
+  background-color: #333;
+  transition: background-color 0.3s;
 }
 
 .modal .close:hover {
-    background-color: rgb(226, 36, 26);
+  background-color: #111;
 }
 
 .modal-animation {
-    animation: show-modal .5s;
+  animation: show-modal 0.5s;
 }
 
 @keyframes show-modal {
+  0% {
+    opacity: 0;
+  }
 
-    0% {
-        opacity: 0;
-    }
+  100% {
+    opacity: 1;
+  }
+}
 
-    100% {
-        opacity: 1;
-    }
+/* color change */
+.colors {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  top: 100px;
+  right: -100px;
+  width: 64px;
+  height: 220px;
+  transition: transform 0.3s;
+}
+
+.color {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+.show-colors {
+  transform: translateX(-110px);
+}
+
+.one {
+  background-color: rgb(250, 20, 6);
+  box-shadow: 0 0 8px rgb(250, 20, 6);
+}
+
+.two {
+  background-color: rgb(6, 173, 250);
+  box-shadow: 0 0 8px rgb(6, 173, 250);
+}
+
+.three {
+  background-color: rgb(0, 255, 42);
+  box-shadow: 0 0 8px rgb(0, 255, 42);
+}
+
+.one:hover {
+  background-color: rgb(209, 33, 24);
+  box-shadow: 0 0 16px rgb(250, 20, 6);
+}
+
+.two:hover {
+  background-color: rgb(28, 145, 199);
+  box-shadow: 0 0 16px rgb(6, 173, 250);
+}
+
+.three:hover {
+  background-color: rgb(28, 209, 58);
+  box-shadow: 0 0 16px rgb(0, 255, 42);
 }
